@@ -1,0 +1,27 @@
+//Design a PHP that counts and displays the number of times it has been accessed since the last server reboot.
+
+php 
+// File path to store the counter value 
+$counterFile = 'counter.txt'; 
+
+// Check if counter file exists, otherwise 
+create it 
+if (!file_exists($counterFile)) { 
+file_put_contents($counterFile, '0'); 
+} 
+
+// Read the counter value from the file 
+$counterValue = 
+file_get_contents($counterFile); 
+
+// Increase the counter value 
+$counterValue++; 
+
+// Update the counter value in the file 
+file_put_contents($counterFile, 
+$counterValue); 
+
+// Display the counter value 
+echo "Number of times accessed since 
+last server reboot: " . $counterValue; 
+?>
